@@ -1,6 +1,6 @@
 package items;
 
-public class Fish {
+public class Fish extends items{
 	String name;
 	int value;
 	double weight;
