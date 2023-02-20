@@ -1,3 +1,4 @@
+package items;
 public class Blobfish extends Fish {
 	public Blobfish(String name, int value, double weight) {
 		super(name, value, weight);

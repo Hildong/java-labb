@@ -1,6 +1,8 @@
+package items;
 import java.util.Random;
 
 public class Trout extends Fish {
+
 	public Trout(String name, int value, double weight) {
 		super(name, value, weight);
 		Random rand = new Random();
