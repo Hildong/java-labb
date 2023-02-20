@@ -1,4 +1,7 @@
+package The_adventure;
 import java.util.ArrayList;
+
+import items.Fish;
 
 public class Inventory {
 	// Lists for different item types

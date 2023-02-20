@@ -27,7 +27,7 @@ public class test {
 
         return sum % 10 == 0 ? true : false;
     }
-
+    
     public static void main(String[] args) {
         String personNumber = "11111111";
 

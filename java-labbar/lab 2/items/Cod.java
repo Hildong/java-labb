@@ -1,3 +1,4 @@
+package items;
 import java.util.Random;
 
 public class Cod extends Fish {
@@ -9,4 +10,5 @@ public class Cod extends Fish {
 		value = 10;
 		weight = randomNum; 
 	}
+	
 }
