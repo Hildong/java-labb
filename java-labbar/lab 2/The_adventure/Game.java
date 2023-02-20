@@ -33,6 +33,5 @@ public class Game {
             player.doCommand(loc, player.getCurrentLocation());
         }
         
-        player.Fish();
     }
 }

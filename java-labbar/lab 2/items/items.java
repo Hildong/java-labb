@@ -4,20 +4,27 @@ import java.util.ArrayList;
 public class items {
     private String name;
     private double weight;
-    private ArrayList<Item> items = new ArrayList<Item>();
+    private ArrayList<items> itemList = new ArrayList<items>();
     
-    public Item() {
+    public items() {
 
     }
 
-    public Item(String name, double weight) {
+    public items(String name, double weight) {
 		this.name = name;
         this.weight = weight;
 	}
 
     public void addItem(items item) {
-        items.add(item); 
+        itemList.add(item); 
+    }
+
+    public String getItemName() {
+        return this.name;
     }
     
+    public double getItemWeight() {
+        return this.weight;
+    }
     
 }

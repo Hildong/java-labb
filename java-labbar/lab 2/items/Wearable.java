@@ -1,12 +1,14 @@
-public class Wearable {
+package items;
+
+public class Wearable extends items {
     private double damageReduction;
 
-    public Weapon(String name, double weight, double damageReduction) {
+    public Wearable(String name, double weight, double damageReduction) {
         super(name, weight);
         this.damageReduction = damageReduction;
     }
     
-    public getDamageReduction() {
+    public double getDamageReduction() {
         return this.damageReduction;
     }
 }

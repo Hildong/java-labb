@@ -4,23 +4,20 @@ import java.util.Random;
 
 public class Outside extends Location {
 
-    private Map<String, Integer> weatherCondition = Map.of(
-        "Sunny", 1,
-        "Windy", 1,
-        "Snowy", 0,
-    );
-
-
-    public Outside(String name, String description, String paths, String placeType) {
-        super(name, description, paths, placeType);
+    public Outside(String name, String description, String paths, String placeType, boolean firstTime) {
+        super(name, description, paths, placeType, firstTime);
     }
 
-    public Map returnWeather() {
+    public String returnWeather() {
         Random rand = new Random();
-        int n = rand.nextInt(3);
+        int n = rand.nextInt(10);
 
-        if(n =< 1) {
-            return weatherCondition;
+        if(n <= 1) {
+            return "Snowy";
+        } else if(n > 2 && n < 6) {
+            return "Windy";
+        } else {
+            return "Sunny";
         }
     }
    

@@ -1,3 +1,5 @@
+package items;
+
 public class Weapon extends items {
     private int damage;
 
@@ -6,7 +8,7 @@ public class Weapon extends items {
         this.damage = damage;
     }
     
-    public void getDamage() {
+    public int getDamage() {
         return this.damage;
     }
     

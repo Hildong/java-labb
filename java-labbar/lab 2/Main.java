@@ -1,5 +1,3 @@
-package The_adventure;
-
 import The_adventure.Game;
 
 public class Main {
