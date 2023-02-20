@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class Inventory {
 	// Lists for different item types
 	ArrayList<Fish> fishList = new ArrayList<>();
-	ArrayList<Equipment> equipmentList = new ArrayList<>();
+	//ArrayList<Equipment> equipmentList = new ArrayList<>();
 
 //	ArrayList<Wearables> wearList = new ArrayList<>();
 	public Inventory() {
-
+	
 	}
 
 	// Add methods for different item types
@@ -22,6 +22,8 @@ public class Inventory {
 
 //Method for printing contents in inventory
 	public void printInv() {
-		System.out.println(fishList);
+		for (int i = 0; i <fishList.size();i++) {
+		System.out.println(fishList.get(i));
+		}
 	}
 }

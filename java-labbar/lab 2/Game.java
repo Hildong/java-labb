@@ -5,6 +5,7 @@ public class Game {
     private Scanner keyboard; 
     private Location loc = new Location();
     private Player player;
+	private Inventory Inventory;
     
     public Game() {
 	    keyboard = new Scanner(System.in);
@@ -22,8 +23,11 @@ public class Game {
         this.player = new Player(loc.getSpecificLocation(0));
         player.getPlayerName();
         loc.getLocations();
-
-
-        player.Fish();
+        
+        player.Fishing(Inventory);
+        Inventory.printInv();
+    }
+    public Player getPlayer() {
+    	return player;
     }
 }
