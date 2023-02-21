@@ -61,6 +61,10 @@ public class Location {
         return this.paths;
     }
 
+    public String[] getDirections() {
+        return directions;
+    }
+
     public void addLocation(Location loc) {
         locationList.add(loc);
     }

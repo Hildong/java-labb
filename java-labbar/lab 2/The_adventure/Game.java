@@ -2,6 +2,8 @@ package The_adventure;
 import java.util.*;
 
 import location.Location;
+import location.Outside;
+import location.Room;
 
 public class Game {
 
@@ -13,8 +15,8 @@ public class Game {
 	    keyboard = new Scanner(System.in);
         loc.addLocation(new Location("Town", "This is the town description", "Store,Cave,Lake,Arena", "Town", true));
 	    loc.addLocation(new Location("Store", "This is the Store description", "x,x,Town,x", "Store", true));
-	    loc.addLocation(new Location("Cave", "This is the Cave description", "x,x,Lake,Town", "Cave", true));
-	    loc.addLocation(new Location("Lake", "This is the Lake description", "Town,Cave,x,x", "Lake", true));
+	    loc.addLocation(new Room("Cave", "This is the Cave description", "x,x,Lake,Town", "Cave", true));
+	    loc.addLocation(new Outside("Lake", "This is the Lake description", "Town,Cave,x,x", "Lake", true));
 	    loc.addLocation(new Location("Arena", "This is the Arena description", "x,Town,x,x", "Arena", true));
     }
     
@@ -30,7 +32,8 @@ public class Game {
 
         while (!GameOver) {
             loc.getWalkablePaths(player.getCurrentLocation());
-            player.doCommand(loc, player.getCurrentLocation());
+            System.out.println("\nWhat do you want to do?");
+            System.out.println(player.doCommand(loc, player.getCurrentLocation()));;
         }
         
     }
