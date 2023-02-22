@@ -15,10 +15,6 @@ public class items {
         this.weight = weight;
 	}
 
-    public void addItem(items item) {
-        itemList.add(item); 
-    }
-
     public String getItemName() {
         return this.name;
     }
@@ -26,5 +22,8 @@ public class items {
     public double getItemWeight() {
         return this.weight;
     }
-    
+
+    public void addItem(items item) {
+        itemList.add(item); 
+    }
 }

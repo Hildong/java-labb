@@ -1,9 +1,8 @@
 package location;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;;
+
+import The_adventure.Player;
 
 public class Location {
     private String name = "";
@@ -11,7 +10,6 @@ public class Location {
     private String paths;
     private String placeType;
     private boolean firstTimeEntering;
-    private int newLocationIndex;
     private ArrayList<Location> locationList = new ArrayList<>();
     private ArrayList<String> walkableDirections = new ArrayList<>();
     private String[] directions = {"north", "east", "south", "west"};
@@ -20,13 +18,6 @@ public class Location {
         "east", 1,
         "south", 2,
         "west", 3
-    );
-    private Map<Integer, String> locationToIndex = Map.of(
-        0, "Town",
-        1, "Store",
-        2, "Cave",
-        3, "Lake",
-        4, "Arena"
     );
 
     public Location() {
@@ -41,13 +32,6 @@ public class Location {
         this.firstTimeEntering = firstTimeEntering;
     }
 
-    public void setNewLocation(Location newLocation) {
-        this.name = newLocation.name;
-        this.description = newLocation.description;
-        this.paths = newLocation.paths;
-        this.placeType = newLocation.placeType;
-        this.firstTimeEntering = newLocation.firstTimeEntering;
-    }
 
     public String getLocationName() {
         return this.name;
@@ -65,8 +49,8 @@ public class Location {
         return directions;
     }
 
-    public void addLocation(Location loc) {
-        locationList.add(loc);
+    public boolean getFirstTimeEnteringValue() {
+        return this.firstTimeEntering;
     }
 
     public ArrayList getLocations() {
@@ -81,10 +65,26 @@ public class Location {
         return this.directionsToIndex;
     }
 
+    public void setFirstTimeEnteringValue() {
+        this.firstTimeEntering = false;
+    }
+    
+    public void addLocation(Location loc) {
+        locationList.add(loc);
+    }
+
+    public void setNewLocation(Location newLocation) {
+        this.name = newLocation.name;
+        this.description = newLocation.description;
+        this.paths = newLocation.paths;
+        this.placeType = newLocation.placeType;
+        this.firstTimeEntering = newLocation.firstTimeEntering;
+    }
+
     public void getWalkablePaths(Location current) {
         for(int i = 0; i < 4; i++) {
             if(!current.paths.split(",")[i].equals("x")) {
-                System.out.println("There is a path leading " + directions[i]);
+                System.out.println("There is a " + (current.placeType.equals("Room") ? "door" : "path") + " leading " + directions[i]);
                 walkableDirections.add(directions[i]);
             }
         }
@@ -100,4 +100,5 @@ public class Location {
         }   
         return currentLocation;
     }
+
 }

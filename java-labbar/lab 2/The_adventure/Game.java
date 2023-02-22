@@ -1,5 +1,4 @@
 package The_adventure;
-import java.util.*;
 
 import location.Location;
 import location.Outside;
@@ -7,17 +6,15 @@ import location.Room;
 
 public class Game {
 
-    private Scanner keyboard; 
     private Location loc = new Location();
     private Player player;
     
     public Game() {
-	    keyboard = new Scanner(System.in);
-        loc.addLocation(new Location("Town", "This is the town description", "Store,Cave,Lake,Arena", "Town", true));
-	    loc.addLocation(new Location("Store", "This is the Store description", "x,x,Town,x", "Store", true));
-	    loc.addLocation(new Room("Cave", "This is the Cave description", "x,x,Lake,Town", "Cave", true));
+        loc.addLocation(new Location("Town", "This is the town description", "Store,Cave,Lake,Arena", "Outside", true));
+	    loc.addLocation(new Location("Store", "This is the Store description", "x,x,Town,x", "Room", true));
+	    loc.addLocation(new Room("Cave", "This is the Cave description", "x,x,Lake,Town", "Room", true));
 	    loc.addLocation(new Outside("Lake", "This is the Lake description", "Town,Cave,x,x", "Lake", true));
-	    loc.addLocation(new Location("Arena", "This is the Arena description", "x,Town,x,x", "Arena", true));
+	    loc.addLocation(new Location("Arena", "This is the Arena description", "x,Town,x,x", "Outside", true));
     }
     
     public void run() {

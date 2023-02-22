@@ -1,16 +1,9 @@
 package items;
 
 public class Fish extends items { 
-	String name;
-	int value;
-	double weight;
-	public Fish(String name, int value, double weight) {
-		
+
+	public Fish(String name,  double weight) {
+		super(name, weight);
 	}
-	//MOVE TO CLERK CLASS WHEN THAT CLASS IS MADE
-	public void calculateValue() {
-		value *= weight/10;
-	}
-	//MOVE TO CLERK CLASS WHEN THAT CLASS IS MADE
 
 }
