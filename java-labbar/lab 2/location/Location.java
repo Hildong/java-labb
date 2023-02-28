@@ -18,9 +18,6 @@ public class Location {
         "south", 2,
         "west", 3
     );
-    private Map<String, Integer> itemsOnGround = Map.of(
-
-    );
 
     public Location() {
 
@@ -50,7 +47,7 @@ public class Location {
         return directions;
     }
 
-    public ArrayList getLocations() {
+    public ArrayList<Location> getLocations() {
         return this.locationList;
     }
 
@@ -58,7 +55,7 @@ public class Location {
         return this.locationList.get(locationNum);
     }
 
-    public Map getDirectionToIndex() {
+    public Map<String, Integer> getDirectionToIndex() {
         return this.directionsToIndex;
     }
 
