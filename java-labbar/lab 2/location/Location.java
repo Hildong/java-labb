@@ -9,7 +9,6 @@ public class Location {
     private String description = "";
     private String paths;
     private String placeType;
-    private boolean firstTimeEntering;
     private ArrayList<Location> locationList = new ArrayList<>();
     private ArrayList<String> walkableDirections = new ArrayList<>();
     private String[] directions = {"north", "east", "south", "west"};
@@ -19,17 +18,19 @@ public class Location {
         "south", 2,
         "west", 3
     );
+    private Map<String, Integer> itemsOnGround = Map.of(
+
+    );
 
     public Location() {
 
     }
 
-    public Location(String name, String description, String paths, String placeType, Boolean firstTimeEntering) {
+    public Location(String name, String description, String paths, String placeType) {
         this.name = name;
         this.description = description;
         this.paths = paths;
         this.placeType = placeType;
-        this.firstTimeEntering = firstTimeEntering;
     }
 
 
@@ -49,10 +50,6 @@ public class Location {
         return directions;
     }
 
-    public boolean getFirstTimeEnteringValue() {
-        return this.firstTimeEntering;
-    }
-
     public ArrayList getLocations() {
         return this.locationList;
     }
@@ -65,20 +62,20 @@ public class Location {
         return this.directionsToIndex;
     }
 
-    public void setFirstTimeEnteringValue() {
-        this.firstTimeEntering = false;
+    public String getPlaceType() {
+        return this.placeType;
+    }
+
+    public void setNewDescription(String locationName) {
+        this.description = "You are now in " + locationName + "!";
     }
     
     public void addLocation(Location loc) {
         locationList.add(loc);
     }
 
-    public void setNewLocation(Location newLocation) {
-        this.name = newLocation.name;
-        this.description = newLocation.description;
-        this.paths = newLocation.paths;
-        this.placeType = newLocation.placeType;
-        this.firstTimeEntering = newLocation.firstTimeEntering;
+    public Location setNewLocation(Location newLocation, Location currentPlayerLocation) {
+        return newLocation;
     }
 
     public void getWalkablePaths(Location current) {
@@ -94,11 +91,31 @@ public class Location {
         if(walkableDirections.contains(nextLocation)) {
             for(int i = 0; i < 5; i++) {
                 if(currentLocationPaths.split(",")[indexOfNextLocation].equals(getSpecificLocation(i).getLocationName())) {
-                   return getSpecificLocation(i);
+                    currentLocation.setNewDescription(currentLocation.getLocationName());
+                    return getSpecificLocation(i);
                 } 
             }   
         }   
         return currentLocation;
     }
 
+    public String lookAround(Location current, Player player) {
+        return "";
+    }
+
+    public String returnWeather() {
+        return "";
+    }
+
+    public String tryToDig(Player player) {
+        return "Can't dig here.";
+    }
+
+    public void pickUp(Player player, String itemToPickUp) {
+        
+    }
+    
+    public String workout(Player player, Location currentLocation) {
+        return "If you want to workout, you should probably go to the gym";
+    }
 }
